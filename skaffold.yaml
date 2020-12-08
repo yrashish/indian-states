@@ -1,0 +1,14 @@
+apiVersion: skaffold/v2beta10
+kind: Config
+metadata:
+  name: indian-states
+build:
+  artifacts:
+  - image: docker.io/hiashish/indian-states
+    jib:
+      project: com.example:indian-states
+deploy:
+  kubectl:
+    manifests:
+    - k8s/mydeployment.yaml
+    - k8s/myservice.yaml

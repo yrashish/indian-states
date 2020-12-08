@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: states
+  name: states
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: states
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: states
+    spec:
+      containers:
+        - image: docker.io/hiashish/indian-states
+          name: indian-states
+          resources: {}
+status: {}
