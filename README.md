@@ -5,3 +5,7 @@ This is a simple SpringBoot application which when accessed via /states REST end
 `git clone https://github.com/yrashish/indian-states`
 
 `skaffold dev`
+
+# Demo
+[![Demo](https://img.youtube.com/vi/KR8DqxaOGBw/2.jpg)](https://www.youtube.com/watch?v=KR8DqxaOGBw)
+
