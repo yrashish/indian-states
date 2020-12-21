@@ -6,7 +6,7 @@ metadata:
     app: states
   name: states
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: states
