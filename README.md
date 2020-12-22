@@ -7,7 +7,7 @@ Skaffold handles the workflow for building, pushing and deploying your applicati
 # How to start project locally
  * Install skaffold
     `brew install skaffold`
- * Installing Docker Desktop for [Mac](https://www.docker.com/products/docker-desktop)
+ * Installing Docker Desktop for [Mac](https://www.docker.com/products/docker-desktop) for running kubernetes locally
  * Installing kubectl
  `brew install kubectl`
 
