@@ -7,8 +7,8 @@ This is a simple Spring Boot application which when accessed via /states REST en
 # How to start project locally
  * Install skaffold
     `brew install skaffold`
- * Installing Docker Desktop for [Mac](https://www.docker.com/products/docker-desktop) for running kubernetes locally
- * Installing kubectl (Optional for Docker Desktop)
+ * Install Docker Desktop for [Mac](https://www.docker.com/products/docker-desktop) for running kubernetes locally
+ * Install kubectl (Optional for Docker Desktop)
  `brew install kubectl`
 
 `git clone https://github.com/yrashish/indian-states`
