@@ -1,0 +1,38 @@
+name: CI
+on:
+  push:
+    paths:
+      - src/**
+      - action.yml
+      - .github/workflows/**
+jobs:
+  pipiline:
+    name: Pipiline
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+
+      - name: Setup Minikube
+        uses: hiberbee/github-action-minikube@latest
+
+      - name: Setup Helm
+        uses: hiberbee/github-action-helm@latest
+        with:
+          repository-config: test/repositories.yaml
+
+      - name: Authenticate with Docker registry
+        run: echo $DOCKER_PASSWORD | docker login harbor.k8s.hiberbee.net -u $DOCKER_USERNAME --password-stdin
+        env:
+          DOCKER_USERNAME: ${{ secrets.HARBOR_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.HARBOR_PASSWORD }}
+
+      - name: Run Skaffold pipeline
+        uses: hiberbee/github-action-skaffold@latest
+        with:
+          filename: test/skaffold.yaml
+          command: run
+          default-repo: harbor.k8s.hiberbee.net/library
+
+      - name: Get Helm releases
+        run: helm list
