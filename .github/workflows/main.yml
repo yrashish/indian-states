@@ -16,16 +16,11 @@ jobs:
       - name: Setup Minikube
         uses: hiberbee/github-action-minikube@latest
 
-      - name: Setup Helm
-        uses: hiberbee/github-action-helm@latest
+      - name: Login to DockerHub
+        uses: docker/login-action@v1 
         with:
-          repository-config: test/repositories.yaml
-
-      - name: Authenticate with Docker registry
-        run: echo $DOCKER_PASSWORD | docker login registry.hub.docker.com -u $DOCKER_USERNAME --password-stdin
-        env:
-          DOCKER_USERNAME: ${{ secrets.HARBOR_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.HARBOR_PASSWORD }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Run Skaffold pipeline
         uses: hiberbee/github-action-skaffold@latest
