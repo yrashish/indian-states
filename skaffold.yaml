@@ -3,7 +3,7 @@ kind: Config
 metadata:
   name: indian-states
 build:
-  insecureRegistries: 
+  insecureRegistries:
   - docker.io
   artifacts:
   - image: docker.io/hiashish/indian-states
