@@ -27,4 +27,4 @@ jobs:
         with:
           filename: skaffold.yaml
           command: run
-          default-repo: registry.hub.docker.com
+          default-repo: registry.hub.docker.com/hiashish/indianstates
