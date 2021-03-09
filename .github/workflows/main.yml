@@ -7,7 +7,7 @@ on:
       - .github/workflows/**
 jobs:
   pipiline:
-    name: Pipiline
+    name: Pipeiline
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout sources
@@ -27,4 +27,4 @@ jobs:
         with:
           filename: skaffold.yaml
           command: run
-          default-repo: docker.io/hiashish/indianstates
+          default-repo: docker.io/hiashish/indian-states
