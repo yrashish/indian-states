@@ -25,9 +25,6 @@ jobs:
       - name: Run Skaffold pipeline
         uses: hiberbee/github-action-skaffold@latest
         with:
-          filename: test/skaffold.yaml
+          filename: skaffold.yaml
           command: run
-          default-repo: harbor.k8s.hiberbee.net/library
-
-      - name: Get Helm releases
-        run: helm list
+          default-repo: registry.hub.docker.com
