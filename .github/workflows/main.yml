@@ -25,6 +25,6 @@ jobs:
       - name: Run Skaffold pipeline
         uses: hiberbee/github-action-skaffold@latest
         with:
-          filename: skaffold.yaml
+          filename: indian-states/skaffold.yaml
           command: run
           default-repo: registry.hub.docker.com/hiashish/indian-states
