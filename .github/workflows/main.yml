@@ -22,7 +22,7 @@ jobs:
           repository-config: test/repositories.yaml
 
       - name: Authenticate with Docker registry
-        run: echo $DOCKER_PASSWORD | docker login harbor.k8s.hiberbee.net -u $DOCKER_USERNAME --password-stdin
+        run: echo $DOCKER_PASSWORD | docker login registry.hub.docker.com -u $DOCKER_USERNAME --password-stdin
         env:
           DOCKER_USERNAME: ${{ secrets.HARBOR_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.HARBOR_PASSWORD }}
