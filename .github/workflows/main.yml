@@ -3,11 +3,6 @@ on:
   push:
     branches:
       - master
-    paths:
-      - "src/**"
-      - "k8s/**"
-      - "skaffold.yaml"
-
 env:
   PROJECT_ID: ${{ secrets.PROJECT_ID }}
   GKE_CLUSTER: hello-java-cluster
