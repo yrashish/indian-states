@@ -8,8 +8,7 @@ env:
   GKE_CLUSTER: hello-java-cluster
   GKE_ZONE: us-central1-c
   SKAFFOLD_DEFAULT_REPO: gcr.io/${{ secrets.PROJECT_ID }}/indian-states
-  SKAFFOLD_PROFILE: staging
-
+  
 jobs:
   deploy:
     name: Deploy
