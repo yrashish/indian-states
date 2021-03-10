@@ -46,11 +46,6 @@ jobs:
       - name: Configure docker
         run: |
           gcloud --quiet auth configure-docker
-      - name: auth
-        run: |
-          apt-get install -qq -y gettext
-          echo ${{ secrets.SERVICE_ACCOUNT_KEY }} > ${HOME}/gcloud-service-key.json
-          gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
       - name: Connect to cluster
         run: |
           gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
