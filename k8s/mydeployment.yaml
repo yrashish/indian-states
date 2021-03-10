@@ -18,7 +18,7 @@ spec:
         app: states
     spec:
       containers:
-        - image: docker.io/hiashish/indian-states
+        - image: gcr.io/careful-form-307204/indian-states
           name: indian-states
           resources: {}
 status: {}
