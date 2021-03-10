@@ -27,7 +27,7 @@ jobs:
         with:
           ref: master
       - name: Install gcloud
-        uses: GoogleCloudPlatform/google-github-actions/setup-gcloud@master
+        uses: google-github-actions/setup-gcloud@master
         with:
           version: "309.0.0"
           service_account_key: ${{ secrets.SERVICE_ACCOUNT_KEY }}
