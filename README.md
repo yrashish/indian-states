@@ -1,5 +1,5 @@
 # About Project
-This is a simple Spring Boot application which when accessed via /states REST endpoint show Indian states and their capitals. This application uses an in-memory H2 database which inserts rows at the start of application and keep it in memory.
+This is a simple Spring Boot application which when accessed via /states REST endpoint show Indian states and their capitals. This application uses an in-memory H2 database which inserts rows at the start of application and keep it in memory
 
 # About Skaffold
 > Skaffold handles the workflow for building, pushing and deploying your application.
