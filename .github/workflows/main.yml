@@ -26,4 +26,3 @@ jobs:
         uses: hiberbee/github-action-skaffold@latest
         with:
           command: run
-          default-repo: registry.hub.docker.com/hiashish/indian-states
