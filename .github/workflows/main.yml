@@ -23,7 +23,7 @@ jobs:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
     steps:
       - name: Check out repository on master branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v1
         with:
           ref: master
       - name: Install gcloud
