@@ -15,12 +15,13 @@ env:
   GKE_ZONE: us-central1-c
   SKAFFOLD_DEFAULT_REPO: gcr.io/${{ secrets.PROJECT_ID }}/indian-states
   SKAFFOLD_PROFILE: staging
-  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 
 jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
+    env:
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     steps:
       - name: Check out repository on master branch
         uses: actions/checkout@v2
