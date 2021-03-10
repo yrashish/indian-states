@@ -28,12 +28,12 @@ jobs:
         with:
           ref: master
       - name: Install gcloud
-        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        uses: GoogleCloudPlatform/google-github-actions/setup-gcloud@master
         with:
           version: "309.0.0"
           service_account_key: ${{ secrets.SERVICE_ACCOUNT_KEY }}
           project_id: ${{ secrets.PROJECT_ID }}
-      - name: Install kustomize, kubectl and skaffold
+      - name: Install kubectl and skaffold
         uses: daisaru11/setup-cd-tools@v1
         with:
           kubectl: "1.19.2"
