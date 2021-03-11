@@ -36,7 +36,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.skaffold/
-          key: fixed
+          key: fixed-${{ github.sha }}
       - name: Configure docker
         run: |
           gcloud --quiet auth configure-docker
@@ -46,3 +46,6 @@ jobs:
       - name: Build and deploy to cluster
         run: |
           skaffold run
+      - name: Verify deployment
+        run: |
+          kubectl get all
