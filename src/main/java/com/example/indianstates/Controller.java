@@ -8,8 +8,11 @@ import java.util.List;
 
 @RestController
 public class Controller {
-    @Autowired
-    private StateService stateService;
+    private final StateService stateService;
+
+    public Controller(StateService stateService) {
+        this.stateService = stateService;
+    }
 
     @GetMapping("/states")
     private List<State> getAllStates(){
