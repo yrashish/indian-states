@@ -1,14 +1,7 @@
 package com.example.indianstates;
 
-import lombok.*;
 
-@Getter
-@Setter
-@ToString
-@EqualsAndHashCode
-@AllArgsConstructor
-@NoArgsConstructor
-public class State {
-    public String name;
-    public String capital;
-}
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public record State(String name, String capital) {}

@@ -5,8 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.3</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<version>2.5.0-M1</version>
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>indian-states</artifactId>
@@ -15,9 +14,22 @@
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>16</java.version>
 	</properties>
-
+	<pluginRepositories>
+		<pluginRepository>
+			<id>repository.spring.release</id>
+			<name>Spring GA Repository</name>
+			<url>https://repo.spring.io/plugins-release/</url>
+		</pluginRepository>
+	</pluginRepositories>
+	<repositories>
+		<repository>
+			<id>repository.spring.milestone</id>
+			<name>Spring Milestone Repository</name>
+			<url>https://repo.spring.io/milestone</url>
+		</repository>
+	</repositories>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -38,12 +50,13 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
+		<!--Bye Bye Lombok-->
+		<!--<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.18.8</version>
 			<scope>provided</scope>
-		</dependency>
+		</dependency>-->
 
 	</dependencies>
 
@@ -64,6 +77,14 @@
 					<to>
 						<image>registry.hub.docker.com/hiashish/indian-states</image>
 					</to>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>16</source>
+					<target>16</target>
 				</configuration>
 			</plugin>
 		</plugins>

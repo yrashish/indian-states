@@ -1,7 +1,7 @@
 package com.example.indianstates;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -17,5 +17,9 @@ public class Controller {
     @GetMapping("/states")
     private List<State> getAllStates(){
         return stateService.findAll();
+    }
+    @GetMapping(value = "/state")
+    private State getSpecificState(@RequestParam(required = false,name = "name",defaultValue = "Maharashtra") String name){
+        return stateService.findByName(name);
     }
 }
