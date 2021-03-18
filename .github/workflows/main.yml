@@ -3,18 +3,12 @@ on:
   push:
     branches:
       - master
-    paths:
-      - "src/**"
-      - "k8s/**"
-      - "skaffold.yaml"
-
 env:
   PROJECT_ID: ${{ secrets.PROJECT_ID }}
   GKE_CLUSTER: hello-java-cluster
   GKE_ZONE: us-central1-c
   SKAFFOLD_DEFAULT_REPO: gcr.io/${{ secrets.PROJECT_ID }}/indian-states
-  SKAFFOLD_PROFILE: staging
-
+  
 jobs:
   deploy:
     name: Deploy
@@ -32,6 +26,7 @@ jobs:
           version: "309.0.0"
           service_account_key: ${{ secrets.SERVICE_ACCOUNT_KEY }}
           project_id: ${{ secrets.PROJECT_ID }}
+          export_default_credentials: true
       - name: Install kubectl and skaffold
         uses: daisaru11/setup-cd-tools@v1
         with:
@@ -41,18 +36,16 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.skaffold/
-          key: fixed
+          key: fixed-${{ github.sha }}
       - name: Configure docker
         run: |
           gcloud --quiet auth configure-docker
-      - name: auth
-        run: |
-          apt-get install -qq -y gettext
-          echo ${{ secrets.SERVICE_ACCOUNT_KEY }} > ${HOME}/gcloud-service-key.json
-          gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
       - name: Connect to cluster
         run: |
           gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
       - name: Build and deploy to cluster
         run: |
           skaffold run
+      - name: Verify deployment
+        run: |
+          kubectl get all

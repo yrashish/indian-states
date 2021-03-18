@@ -4,11 +4,9 @@ metadata:
   name: indian-states
 build:
   artifacts:
-    - image: docker.io/hiashish/indian-states
+    - image: gcr.io/careful-form-307204/indian-states
       jib:
         project: com.example:indian-states
-  insecureRegistries:
-    - docker.io
 deploy:
   kubectl:
     manifests:
