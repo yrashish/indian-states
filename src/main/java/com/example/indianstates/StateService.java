@@ -24,10 +24,10 @@ public class StateService implements StateRepository{
     }
 
     @Override
-    public State findByName(String name) {
+    public String findByName(String name) {
         String findByName = """
-                select * from States where name = ?;
+                select capital from States where name = ?;
                 """;
-        return jdbcTemplate.queryForObject(findByName,rowMapper, name);
+        return jdbcTemplate.queryForObject(findByName, String.class, name);
     }
 }

@@ -4,5 +4,6 @@ import java.util.List;
 
 public interface StateRepository {
     List<State> findAll();
-    State findByName(String name);
+
+    String findByName(String name);
 }

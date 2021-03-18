@@ -15,11 +15,12 @@ public class Controller {
     }
 
     @GetMapping("/states")
-    private List<State> getAllStates(){
+    private List<State> getAllStates() {
         return stateService.findAll();
     }
+
     @GetMapping(value = "/state")
-    private State getSpecificState(@RequestParam(required = false,name = "name",defaultValue = "Maharashtra") String name){
+    private String getSpecificState(@RequestParam(required = false, name = "name", defaultValue = "Maharashtra") String name) {
         return stateService.findByName(name);
     }
 }
