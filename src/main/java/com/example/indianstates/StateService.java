@@ -1,6 +1,5 @@
 package com.example.indianstates;
 
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
@@ -21,7 +20,7 @@ public class StateService implements StateRepository{
         String findAllStates = """
                 select * from States
                 """;
-        return jdbcTemplate.query(findAllStates, new BeanPropertyRowMapper<>(State.class));
+        return jdbcTemplate.query(findAllStates, rowMapper);
     }
 
     @Override
