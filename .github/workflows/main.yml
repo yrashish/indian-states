@@ -23,7 +23,7 @@ jobs:
       - name: Install Java 16  
         uses: AdoptOpenJDK/install-jdk@v1
         with:
-          version: '13'
+          version: '16'
           architecture: x64
       - name: Install gcloud
         uses: google-github-actions/setup-gcloud@master
