@@ -17,7 +17,7 @@ on:
       - master
 env:
   PROJECT_ID: ${{ secrets.PROJECT_ID }}
-  GKE_CLUSTER: hello-java-cluster
+  GKE_CLUSTER: autopilot-cluster-1
   GKE_ZONE: us-central1-c
   SKAFFOLD_DEFAULT_REPO: gcr.io/${{ secrets.PROJECT_ID }}/indian-states
   
