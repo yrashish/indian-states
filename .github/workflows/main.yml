@@ -18,7 +18,7 @@ on:
 env:
   PROJECT_ID: ${{ secrets.PROJECT_ID }}
   GKE_CLUSTER: autopilot-cluster-1
-  GKE_ZONE: us-central1-c
+  GKE_ZONE: us-central1
   SKAFFOLD_DEFAULT_REPO: gcr.io/${{ secrets.PROJECT_ID }}/indian-states
   
 jobs:
